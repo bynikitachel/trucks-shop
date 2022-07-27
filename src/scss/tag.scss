@@ -1,0 +1,13 @@
+@import "./_colors.scss";
+@import "./mixins.scss";
+.additional-info {
+    display: flex;
+    .year,
+    .mileage,
+    .axle-configuration {
+        background-color: #c4c4c4;
+        margin-right: 16px;
+        padding: 5px;
+        @include description;
+    }
+}

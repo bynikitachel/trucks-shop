@@ -1,0 +1,10 @@
+mixin menuItem(items, type)
+    if type !== "main"
+        ul.breadcrumbs
+            each item in items
+                if items.indexOf(item) !== items.length-1
+                    li= item.text + '  ' +  '>'
+    else
+        ul.nav
+            each item in items
+                li= item.text

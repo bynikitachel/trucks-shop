@@ -1,0 +1,31 @@
+@import "./_colors.scss";
+@import "./mixins.scss";
+.item {
+    background-color: #fff;
+    margin-bottom: 16px;
+    padding: 10px;
+    display: flex;
+    .info-container {
+        // width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .info {
+            padding-left: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .title {
+                @include header-level-3;
+            }
+            .item-description {
+                margin-top: 7px;
+                width: 60%;
+                @include description;
+            }
+        }
+    }
+    .price {
+        @include header-level-4;
+        white-space: nowrap;
+    }
+}

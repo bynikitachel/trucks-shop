@@ -1,0 +1,8 @@
+include ./paginationButton.pug
+
+mixin pagination()
+    .pagination-container 
+        +paginationButton('left')
+        div(class='page active') 1 
+        .page 2
+        +paginationButton()

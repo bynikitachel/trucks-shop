@@ -1,0 +1,16 @@
+@import "./_colors.scss";
+@import "./mixins.scss";
+.pagination-button {
+    width: 35px;
+    height: 35px;
+    background-color: $white;
+    border: none;
+}
+
+.left {
+    margin-right: 8px;
+}
+
+.right {
+    margin-left: 8px;
+}

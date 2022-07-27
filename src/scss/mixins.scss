@@ -1,0 +1,37 @@
+@mixin header-level-1 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+@mixin header-level-2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+@mixin header-level-3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+@mixin header-level-4 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+@mixin description {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: $disableText-descriptionText;
+}
+
+@mixin link {
+    color: $link;
+}
+
+@mixin link-hover {
+    color: $primary-linkHover;
+}
+
+@mixin link-visited {
+    color: $link-visited;
+}

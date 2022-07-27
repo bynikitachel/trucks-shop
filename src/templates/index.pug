@@ -1,0 +1,105 @@
+block variables 
+- const DATA = htmlWebpackPlugin.options.file
+
+doctype html
+html(lang="en")
+    include ./components/nav.pug
+    include ./components/item.pug
+    include ./components/socialNetworks.pug
+    include ./components/sorting.pug
+    include ./components/pagination.pug
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="keywords" content=DATA.page_meta.meta_keywords)
+        meta(name="description" content=DATA.page_meta.description)
+        link(rel="stylesheet" href="style.css")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet")
+        title TruckShop
+    body 
+        .container
+            header
+                .company-name TruckShop
+                img(src='./img/logo.svg' width='20px' height='20px')
+            +menuItem(DATA.nav, 'main')
+            +menuItem(DATA.nav, '')
+            .content-container
+                .search-settings
+                    .results-found 26 Results Found
+                    .param
+                        .param-name Param 1
+                            img(src='./img/Dropdown Arrow.png' width='14px' height='7px')
+                        .checkbox-container
+                            input.checkbox(type='checkbox')
+                            .value value 1
+                        .checkbox-container
+                            input.checkbox(type='checkbox')
+                            .value value 2
+                        .checkbox-container
+                            input.checkbox(type='checkbox')
+                            .value value 3
+                        .checkbox-container
+                            input.checkbox(type='checkbox')
+                            .value value 4
+                        .checkbox-container
+                            input.checkbox(type='checkbox')
+                            .value value 5
+                    .param
+                        .param-name Param 2
+                            img(src='./img/Dropdown Arrow.png' width='14px' height='7px')
+                        .radio-container
+                            input.radio(type='radio')
+                            .value value 1
+                        .radio-container
+                            input.radio(type='radio')
+                            .value value 2
+                        .radio-container
+                            input.radio(type='radio')
+                            .value value 3
+                    .param
+                        .param-name Param 3
+                            img(src='./img/Dropdown Arrow.png' width='14px' height='7px')
+                        .inputs-container
+                            input.price
+                            input.price
+                    .param
+                        .param-name Param 4
+                            img(src='./img/Dropdown Arrow.png' width='14px' height='7px')
+                        input.keyword
+                    button SEARCH
+                .search-results
+                    .heading-results Results:
+                    .pagination-sorting-container
+                        +pagination()
+                        +sorting()
+                    +resultItem(DATA.stock)
+                    .pagination-sorting-container
+                        +pagination()
+                        +sorting()
+                    .description
+                        each item in DATA.page_text
+                            p=item.content
+            footer 
+                .contacts-container
+                    .contacts 
+                        .company-container 
+                            .company-name TruckShop
+                            img(src='./img/logo.svg' width='20px' height='20px')
+                        .address-container
+                            .container-img
+                                img(src='./img/address.png' width='14px' height='22px')
+                            .address Company Adress: Lorem ipsum dolor sit amet 18600, Netherlands
+                        .phone-container
+                            .container-img
+                                img(src='./img/phone.png' width='14px' height='14px')
+                            .phone +38 958 755-00-00
+                        +socialNetworks()
+                    .description
+                        div Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis. Quis quo molestias repellat.
+                .privacy-policy
+                    span @ 2022 - 
+                    a(href='#') Privacy Policy
+                    span  - 
+                    a(href='#') Terms and Conditions

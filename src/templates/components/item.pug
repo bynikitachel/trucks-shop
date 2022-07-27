@@ -1,0 +1,13 @@
+include ./tag.pug
+
+mixin resultItem(items)
+    each item in items
+        .item
+            img(src=`img/${item.image}` width='224px' height='168px')
+            .info-container
+                .info
+                    .title=item.title
+                    .item-description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
+                    +tag(item)
+                if item.price_currency==='EUR'
+                    .price='€' + ' ' + item.price

@@ -1,0 +1,190 @@
+@import "./_colors.scss";
+@import "./mixins.scss";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+input,
+select,
+textarea {
+    font-size: 1rem;
+    padding: 7px 8px;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $body-background;
+    margin: 40px 0 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: "Roboto";
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    @include header-level-3;
+    background-color: $white;
+    display: flex;
+    padding: 40px 16px;
+    div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.content-container {
+    margin-top: 18px;
+    display: flex;
+    .search-settings {
+        background-color: $white;
+        padding: 16px;
+        width: 20%;
+        height: fit-content;
+        margin-top: 50px;
+        .results-found {
+            padding-bottom: 16px;
+            border-bottom: 1px solid $border;
+        }
+        .param {
+            margin: 18px 0 4px;
+            .param-name {
+                margin-bottom: 4px;
+            }
+            .checkbox-container,
+            .radio-container {
+                display: flex;
+                align-items: center;
+                color: $default-text;
+            }
+            .checkbox,
+            .radio {
+                margin: 7px 9px 7px 0;
+            }
+            .param-name {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .inputs-container {
+                display: flex;
+                justify-content: space-between;
+            }
+            .price {
+                width: 48%;
+            }
+            .price,
+            .keyword {
+                height: 35px;
+                border-radius: 0;
+                border: 1px solid $border;
+                margin-top: 6px;
+            }
+            .keyword {
+                width: 100%;
+            }
+            input {
+                display: block;
+            }
+        }
+        button {
+            height: 34px;
+            width: 100%;
+            color: $white;
+            background-color: $primary-linkHover;
+            border: none;
+            margin-top: 18px;
+        }
+    }
+    .search-results {
+        margin-left: 20px;
+        width: 80%;
+        .heading-results {
+            @include header-level-3;
+            height: 50px;
+        }
+        .pagination-sorting-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+    }
+    .description {
+        margin-top: 24px;
+        width: 80%;
+        font-weight: 400;
+        color: $default-text;
+        p:first-child {
+            margin-top: 0;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+footer {
+    .contacts-container {
+        background-color: $white;
+        display: flex;
+        margin-top: 23px;
+        .contacts {
+            padding: 40px 16px;
+            width: 20%;
+            div {
+                display: flex;
+            }
+            .container-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+            }
+            .company-name {
+                @include header-level-3;
+            }
+            .address-container {
+                margin-top: 18px;
+            }
+            .phone-container {
+                margin: 11px 0 16px;
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+        .description {
+            padding: 40px 20px;
+            width: 80%;
+            div {
+                font-weight: 400;
+                font-size: 14px;
+                color: $default-text;
+                width: 80%;
+            }
+        }
+    }
+    .privacy-policy {
+        text-align: center;
+        margin-top: 10px;
+        a {
+            @include link;
+        }
+        a:hover {
+            @include link-hover;
+            text-decoration: underline;
+        }
+        a:visited {
+            @include link-visited;
+        }
+    }
+}
